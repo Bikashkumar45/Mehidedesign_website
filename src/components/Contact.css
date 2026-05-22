@@ -1,0 +1,145 @@
+/* ================= CONTACT SECTION ================= */
+
+.contact {
+  padding: 80px 20px;
+ background: linear-gradient(
+    135deg,
+    #000814,
+    #001233,
+    #000814,
+    #001845
+  );
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 42px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 17px;
+  color: white;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.info-box h4 {
+  color: #e91e63;
+  margin-bottom: 8px;
+}
+
+/* ================= FORM ================= */
+
+.contact-form {
+  flex: 1;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #e91e63;
+}
+
+.contact-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #e91e63, #ff4081);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.03);
+}
+
+.success {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info h2 {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .contact-info p {
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact-info h2 {
+    font-size: 28px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+  }
+}

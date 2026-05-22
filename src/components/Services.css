@@ -1,0 +1,72 @@
+/* Services.css */
+
+.services {
+  padding: 80px 10%;
+    background: linear-gradient(
+    135deg,
+    #000814,
+    #001233,
+    #000814,
+    #001845
+  );
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 40px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.service-text {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.service-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #c94f7c;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: none;
+  background: #c94f7c;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #a0522d;
+}

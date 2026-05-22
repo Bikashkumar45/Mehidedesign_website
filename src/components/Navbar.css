@@ -1,0 +1,47 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+background: linear-gradient(
+    135deg,
+    #000814,
+    #001233,
+    #000814,
+    #001845
+  );
+  padding: 15px 50px;
+
+  /* Sticky Navbar */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Optional Effects */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar h2 {
+  color: white;
+  font-size: 28px;
+  font-family: Arial, sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: yellow;
+}

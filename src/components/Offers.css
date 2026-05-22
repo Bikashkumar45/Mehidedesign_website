@@ -1,0 +1,157 @@
+/* ================= OFFERS SECTION ================= */
+
+.offers {
+  padding: 80px 20px;
+ background: linear-gradient(
+    135deg,
+    #000814,
+    #001233,
+    #000814,
+    #001845
+  );
+  text-align: center;
+}
+
+.offers h2 {
+  font-size: 42px;
+  color: #38bdf8;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+/* ================= CONTAINER ================= */
+
+.offers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= CARD ================= */
+
+.offer-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(233, 30, 99, 0.08);
+  border-radius: 50%;
+  top: -40px;
+  right: -40px;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ================= ICON ================= */
+
+.offer-icon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+/* ================= TEXT ================= */
+
+.offer-card h3 {
+  font-size: 24px;
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+.offer-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* ================= BUTTON ================= */
+
+.offer-card button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #e91e63, #ff4081);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.offer-card button:hover {
+  background: linear-gradient(to right, #c2185b, #e91e63);
+  transform: scale(1.05);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .offers {
+    padding: 60px 15px;
+  }
+
+  .offers h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .offers-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .offer-card {
+    padding: 30px 20px;
+  }
+
+  .offer-icon {
+    font-size: 45px;
+  }
+
+  .offer-card h3 {
+    font-size: 22px;
+  }
+
+  .offer-card p {
+    font-size: 15px;
+  }
+
+  .offer-card button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+  .offers h2 {
+    font-size: 28px;
+  }
+
+  .offer-card {
+    border-radius: 18px;
+  }
+
+  .offer-card h3 {
+    font-size: 20px;
+  }
+
+  .offer-card p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,94 @@
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Floating Button */
+
+.whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Popup Box */
+
+.chat-box {
+  width: 320px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+
+.chat-header {
+  background: #25d366;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Body */
+
+.chat-body {
+  padding: 20px;
+}
+
+.chat-body p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.chat-body button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  background: #25d366;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-body button:hover {
+  background: #1ebc59;
+}
