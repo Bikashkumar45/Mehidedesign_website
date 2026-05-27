@@ -1,16 +1,15 @@
-import "./Contact.css";
+import axios from "axios";
 import { useState } from "react";
+import "./Contact.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
-  const [success, setSuccess] = useState("");
-
-  // Handle Input Change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,91 +17,69 @@ function Contact() {
     });
   };
 
-  // Handle Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
-    if (
-      formData.name === "" ||
-      formData.email === "" ||
-      formData.message === ""
-    ) {
-      alert("Please fill all fields");
-      return;
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/contact",
+        formData,
+      );
+
+      alert(res.data.message);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log(error);
+
+      alert("Message Failed");
     }
-
-    // Success Message
-    setSuccess("Message Sent Successfully ✅");
-
-    // Clear Form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
   };
 
   return (
-    <section className="contact" id="Contact">
-      <div className="contact-container">
-        {/* Left Side */}
-        <div className="contact-info">
-          <h2>Contact Us</h2>
+    <div className="contact-container"  id="Contact">
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <h2>Contact Us</h2>
 
-          <p>
-            Book your beautiful mehendi design today for wedding,
-            engagement, anniversary, festivals, and special occasions.
-          </p>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          value={formData.name}
+          onChange={handleChange}
+        />
 
-          <div className="info-box">
-            <h4>📍 Location</h4>
-            <p>Bhubaneswar, Odisha</p>
-          </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
-          <div className="info-box">
-            <h4>📞 Phone</h4>
-            <p>+91 9178597949</p>
-          </div>
+        <input
+          type="text"
+          name="phone"
+          placeholder="Enter Phone"
+          value={formData.phone}
+          onChange={handleChange}
+        />
 
-          <div className="info-box">
-            <h4>✉️ Email</h4>
-            <p>mehendi@gmail.com</p>
-          </div>
-        </div>
+        <textarea
+          name="message"
+          placeholder="Enter Message"
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
 
-        {/* Right Side Form */}
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-
-          <textarea
-            name="message"
-            placeholder="Enter Message"
-            rows="6"
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
-
-          <button type="submit">Send Message</button>
-
-          {success && <p className="success">{success}</p>}
-        </form>
-      </div>
-    </section>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   );
 }
 

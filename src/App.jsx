@@ -20,7 +20,7 @@ function App() {
       <Design />
       <Contact />
       <Footer />
-       <WhatsAppChat />
+      <WhatsAppChat />
     </>
   );
 }
